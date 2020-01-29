@@ -6,7 +6,7 @@ const io = require('socket.io')(http);
 const firebase = require('firebase');
 const fbConfig = require('./database/firebase.js');
 const fb = firebase.initializeApp(fbConfig);
-const port = 1939 || process.env.PORT;
+const port = process.env.PORT || 1939;
 
 const users = require('./models/users.module.js');
 const servers = require('./models/servers.module.js');
@@ -17,7 +17,7 @@ const chatSocket = require('./sockets/chat.socket.js');
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => res.status(200).json({ status: 200, log: 'api ok!' }));
+app.get('/', (req, res) => res.status(200).send('aaaaaaaaaa'));
 
 app.post('/signup?', (req, res) => {
 	let data = {
