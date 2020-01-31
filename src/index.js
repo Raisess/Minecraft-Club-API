@@ -17,7 +17,7 @@ const chatSocket = require('./sockets/chat.socket.js');
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => res.status(200).send('aaaaaaaaaa'));
+app.get('/', (req, res) => res.status(200).json({ status: 200, log: 'api ok!' }));
 
 app.post('/signup?', (req, res) => {
 	let data = {
